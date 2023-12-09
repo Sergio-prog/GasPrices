@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/css/style.css">
+    <title>Current Gas Price</title>
+</head>
+<body>
+    <div class="root">
+        <div class="gasLabelDiv">
+            <h1 style="align-self: center;" class="gasLabel" id="gasLabel">0.0</h1>
+            <h1 class="gasMiniLabel">gwei</h1>
+        </div>
+    </div>
+
+    <script>
+        function sleep(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function getCurrentGasPrice() {
+            while (true) {
+                response = await fetch("/api/getGasPrice");
+                if (response.ok) {
+                    var result = await response.json();
+                    var label = document.getElementById("gasLabel");
+                    label.textContent = result.value;
+
+                    console.log(result.value);
+                } else {
+                    console.error("Failed to fetch new gas price:", response.statusText);
+                }
+
+                await sleep(15 * 1000);
+            }
+        }
+        document.addEventListener('DOMContentLoaded', function () {
+            getCurrentGasPrice();
+        })
+    </script>
+</body>
+</html>

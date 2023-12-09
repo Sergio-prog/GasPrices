@@ -1,0 +1,42 @@
+body {
+    background-color: #1a1a1a; /* Темный фон */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif; /* Выберите подходящий шрифт */
+}
+
+.root {
+    text-align: center;
+}
+
+.gasLabelDiv {
+    background-color: #333; /* Цвет фона элемента */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+    color: rgb(20, 175, 20); /* Зеленый цвет текста */
+}
+
+.gasLabelDivSecond {
+    background-color: #333; /* Цвет фона элемента */
+    border-radius: 10px; /* Закругленные углы */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Тень */
+    color: rgb(20, 175, 20); /* Зеленый цвет текста */
+}
+
+.gasLabel {
+    padding: 15px; /* Внутренний отступ */
+    font-size: 5em; /* Размер шрифта */
+    margin: 0px;
+    color: rgb(20, 175, 20); /* Зеленый цвет текста */
+}
+
+.gasMiniLabel {
+    font-size: 2em; /* Размер шрифта */
+    margin: 0px;
+    margin-top: -10px;
+    padding-bottom: 15px;
+    color: rgb(74, 78, 74); /* Зеленый цвет текста */
+}
